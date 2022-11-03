@@ -21,6 +21,21 @@ public class Reina {
 		this.posicion = posicion;
 
 	}
+	
+	//Constructor que acepta parametros color
+
+		public Reina(Color color) {
+
+			if (color == Color.BLANCO) {
+				posicion = new Posicion(1, 'd');
+			} else if (color == Color.NEGRO) {
+				posicion = new Posicion(8, 'b');
+			}
+
+			if (color == null) {
+				throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
+			}
+		}
 
 	public Posicion getPosicion() {
 
