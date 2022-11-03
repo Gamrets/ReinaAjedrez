@@ -7,6 +7,15 @@ public class Posicion {
 	private int fila;
 	private char columna;
 	
+	
+	//Constructor
+ 	public Posicion(int fila,char columna) {
+ 		
+ 		setFila(fila);
+ 		setColumna(columna);
+ 	}
+	
+	
 	//Creo metodos setter y getter
 
 		private void setFila(int fila) {
@@ -34,7 +43,7 @@ public class Posicion {
 			}
 		}
 
-		public int getColumna() {
+		public char getColumna() {
 			return this.columna;
 		}
 	
