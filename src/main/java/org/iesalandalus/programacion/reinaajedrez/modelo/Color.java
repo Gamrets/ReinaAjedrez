@@ -2,7 +2,7 @@ package org.iesalandalus.programacion.reinaajedrez.modelo;
 
 public enum Color {
 
-	MANANA("Mañana"), TARDE("Tarde");
+	BLANCO("Blanco"), NEGRO("Negro");
 
 	private String cadenaAMostrar;
 
@@ -10,5 +10,7 @@ public enum Color {
 		this.cadenaAMostrar = cadenaAMostrar;
 	}
 
-	
+	public String toString() {
+		return cadenaAMostrar;
+	}
 }
