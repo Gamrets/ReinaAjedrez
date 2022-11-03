@@ -6,6 +6,13 @@ public class Reina {
 
 	private Color color;
 	private Posicion posicion;
+	
+	//Constructor por defecto
+	
+	public Reina() {
+		color = Color.BLANCO;
+		posicion = new Posicion(1, 'd');
+	}
 
 	// Creo metodos Getters y Setters
 
