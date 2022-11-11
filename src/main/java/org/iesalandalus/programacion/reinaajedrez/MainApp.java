@@ -10,8 +10,13 @@ public class MainApp {
 	private static Consola consola;
 	private static boolean salir = false;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws OperationNotSupportedException {
 		
+		do {
+			consola.mostrarMenu();
+			ejecutarOpcion(consola.elegirOpcionMenu());
+			mostrarReina();
+		} while (salir == false);
 	}
 	
 	 private static void ejecutarOpcion(int opcion) throws OperationNotSupportedException {
