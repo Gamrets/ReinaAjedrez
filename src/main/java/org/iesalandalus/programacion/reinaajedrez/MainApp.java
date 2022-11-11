@@ -56,4 +56,9 @@ public class MainApp {
 		
 			reina.mover(consola.elegirDireccion(),consola.elegirPasos());
 		}
+		
+		private static void mostrarReina() {
+			
+			reina.toString();
+		}
 }
