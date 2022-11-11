@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
+
 public class Consola {
 	
 	private Consola() {
@@ -13,4 +15,18 @@ public class Consola {
 		System.out.println("2. Mover.");
 		System.out.println("3. Salir.");
 	}
+	
+	public int elegirOpcionMenu() {
+
+		int opcion = 0;
+		do {
+			System.out.print("Elegir opción: ");
+			opcion = Entrada.entero();
+		} while (opcion < 0 || opcion > 3);
+
+		return opcion;
+
+	}
+	
+	
 }
