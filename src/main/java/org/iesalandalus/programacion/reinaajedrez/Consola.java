@@ -110,6 +110,12 @@ public int elegirPasos() {
 	return pasos;
 	
 }
+
+public void despedirse() {
+	
+	System.out.println("Hasta luego!");
+	
+}
 	
 	
 }
