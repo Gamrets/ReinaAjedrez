@@ -11,4 +11,31 @@ public class MainApp {
 	public static void main(String[] args) {
 		
 	}
+	
+	 private static void ejecutarOpcion(int opcion) throws OperationNotSupportedException {
+			
+			switch (opcion) {
+			case 1:
+
+				crearReinaDefecto();
+				
+				break;
+			case 2:
+				crearReinaColor();
+				
+				break;
+			case 3:
+
+				mover();
+				
+				break;
+			case 4:
+
+				salir = true;
+				
+				break;	
+			default:
+			}
+			
+		}
 }
