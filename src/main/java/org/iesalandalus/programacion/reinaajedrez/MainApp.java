@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.reinaajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 
 public class MainApp {
@@ -37,5 +39,21 @@ public class MainApp {
 			default:
 			}
 			
+		}
+	 
+	 
+	 private static void crearReinaDefecto() {
+			
+			reina = new Reina();
+		}
+		
+		private static void crearReinaColor() {
+		
+			reina = new Reina(consola.elegirColor());
+		}
+		
+		private static void mover() throws OperationNotSupportedException{
+		
+			reina.mover(consola.elegirDireccion(),consola.elegirPasos());
 		}
 }
