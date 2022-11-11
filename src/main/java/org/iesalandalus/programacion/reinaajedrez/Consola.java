@@ -97,6 +97,19 @@ public Direccion elegirDireccion() {
 	}
 	return direccion;	
 }
+
+public int elegirPasos() {
+	
+	int pasos;
+	do {
+		System.out.print("Introduce los pasos a realizar: ");
+		pasos = Entrada.entero();
+
+	} while (pasos < 1 || pasos > 7);
+	
+	return pasos;
+	
+}
 	
 	
 }
