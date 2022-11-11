@@ -5,65 +5,69 @@ import javax.naming.OperationNotSupportedException;
 import org.iesalandalus.programacion.reinaajedrez.modelo.Reina;
 
 public class MainApp {
-	
+
 	private static Reina reina;
-	private static Consola consola;
+
 	private static boolean salir = false;
-	
+
 	public static void main(String[] args) throws OperationNotSupportedException {
-		
+
 		do {
-			consola.mostrarMenu();
-			ejecutarOpcion(consola.elegirOpcionMenu());
-			mostrarReina();
+			Consola.mostrarMenu();
+			ejecutarOpcion(Consola.elegirOpcionMenu());
+			
 		} while (salir == false);
 	}
-	
-	 private static void ejecutarOpcion(int opcion) throws OperationNotSupportedException {
-			
-			switch (opcion) {
-			case 1:
 
-				crearReinaDefecto();
-				
-				break;
-			case 2:
-				crearReinaColor();
-				
-				break;
-			case 3:
+	private static void ejecutarOpcion(int opcion) throws OperationNotSupportedException {
 
-				mover();
-				
-				break;
-			case 4:
+		switch (opcion) {
+		case 1:
 
-				salir = true;
-				
-				break;	
-			default:
-			}
+			crearReinaDefecto();
+
+			break;
+		case 2:
+			crearReinaColor();
+
+			break;
+		case 3:
 			
+			mover();
+
+			break;
+		case 4:
+
+			salir = true;
+
+			break;
+		default:
 		}
-	 
-	 
-	 private static void crearReinaDefecto() {
-			
-			reina = new Reina();
-		}
+
+	}
+
+	private static void crearReinaDefecto() {
+
+		reina = new Reina();
+		mostrarReina();
+	}
+
+	private static void crearReinaColor() {
+
+		reina = new Reina(Consola.elegirColor());
+		mostrarReina();
+	}
+
+	private static void mover() throws OperationNotSupportedException {
 		
-		private static void crearReinaColor() {
-		
-			reina = new Reina(consola.elegirColor());
-		}
-		
-		private static void mover() throws OperationNotSupportedException{
-		
-			reina.mover(consola.elegirDireccion(),consola.elegirPasos());
-		}
-		
-		private static void mostrarReina() {
-			
-			reina.toString();
-		}
+		Consola.mostrarMenuDirecciones();
+
+		reina.mover(Consola.elegirDireccion(), Consola.elegirPasos());
+		mostrarReina();
+	}
+
+	private static void mostrarReina() {
+
+		System.out.println(reina.toString());
+	}
 }
